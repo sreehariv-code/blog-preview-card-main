@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  /* Colors */
+  --primary-yellow: hsl(47, 88%, 63%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-grey: hsl(0, 0%, 50%);
+  --neutral-black: hsl(0, 0%, 7%);
+
+  --body-font-size: 16px;
+  --font-family: "Figtree", sans-serif;
+  --font-weight-normal: 500;
+  --font-weight-bold: 800;
+  --r: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-yellow);
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  min-height: inherit;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 2rem; */
+}
+
+.card {
+  background-color: var(--neutral-white);
+  border: 1px solid var(--neutral-black);
+  width: clamp(300px, 80%, 400px);
+  min-height: 500px;
+  padding: 1.5rem;
+  border-radius: var(--r);
+  position: relative;
+  box-shadow: 12px 10px 0px 2px var(--neutral-black);
+  transition: box-shadow 0.05s linear;
+  animation: fadeUp 0.5s linear forwards;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 8px 6px 0px 2px var(--neutral-black);
+}
+
+figure {
+  width: 100%;
+  /* background-color: red; */
+  aspect-ratio: 16/9;
+  position: relative;
+  border-radius: var(--r);
+  display: flex;
+  overflow: hidden;
+}
+
+figure img {
+  object-fit: cover;
+  flex: 1;
+  border-radius: inherit;
+  position: relative;
+}
+
+.card-content {
+  padding-top: 1.5rem;
+}
+
+.tag {
+  background-color: var(--primary-yellow);
+  color: var(--neutral-black);
+  max-width: min-content;
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--body-font-size);
+  border-radius: calc(var(--r) / 4);
+}
+
+.heading:hover {
+  cursor: pointer;
+  color: var(--primary-yellow);
+}
+
+.date,
+.heading,
+.heading + p {
+  margin-top: 1rem;
+}
+
+.heading + p {
+  color: var(--neutral-grey);
+  width: 90%;
+  font-size: var(--body-font-size);
+  line-height: 1.5rem;
+}
+.profile {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile img {
+  width: 10%;
+}
+
+.profile p {
+  font-size: var(--body-font-size);
+  font-weight: var(--font-weight-bold);
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
