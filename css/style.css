@@ -58,11 +58,6 @@ main {
   animation: fadeUp 0.5s linear forwards;
 }
 
-.card:hover {
-  cursor: pointer;
-  box-shadow: 8px 6px 0px 2px var(--neutral-black);
-}
-
 figure {
   width: 100%;
   /* background-color: red; */
@@ -92,11 +87,6 @@ figure img {
   font-weight: var(--font-weight-bold);
   font-size: var(--body-font-size);
   border-radius: calc(var(--r) / 4);
-}
-
-.heading:hover {
-  cursor: pointer;
-  color: var(--primary-yellow);
 }
 
 .date,
@@ -135,5 +125,26 @@ figure img {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heading {
+    font-size: 5vw;
+  }
+  .heading + p {
+    font-size: 4vw;
+    width: 29ch;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .heading:hover {
+    cursor: pointer;
+    color: var(--primary-yellow);
+  }
+  .card:hover {
+    cursor: pointer;
+    box-shadow: 8px 6px 0px 2px var(--neutral-black);
   }
 }
